@@ -1,0 +1,258 @@
+/* VARIÁVEIS E RESETS 
+"Alegreya", serif;
+*/
+
+:root {
+    --preto: #131313;
+    --branco: #fefefe;
+    --font-text: "Source Sans 3";
+    --font-titulos: "Source Sans 3";
+    --font-size: 0.9375rem;
+}
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+h1, h2, h3, h4, h5, h6, p  {
+    font-weight: normal;
+    font-size: var(--font-size); 
+    color: var(--preto);
+    font-family: var(--font-text);
+}
+
+a, a:link, a:hover, a:visited, a:active {
+    text-decoration: none;
+    color: var(--preto);
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background-color: var(--branco);
+}
+
+::selection {
+    background: var(--rosa); 
+    color: var(--branco);
+}
+
+
+.page {
+    max-width: 400px; 
+    margin: 0 auto; 
+    padding: 1.5625rem;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    overflow-y: auto;
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 480px) {
+    .page {
+      max-width: 100%; 
+      padding: 1.5625rem; 
+    }
+  }
+  
+@media (min-width: 481px) {
+    .page {
+      max-width: 400px; 
+    }
+  }
+
+/* INFOS1::FOLHA DE ROSTO*/
+
+.info {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.info_nome_autor {
+    margin-top: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.info_titulo_livro {
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0 3rem;
+}
+
+
+
+/* SUMÁRIO */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu_topico {
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 0.125rem solid var(--preto); 
+    color: var(--preto);
+}
+
+.lista-item, .menu_topico {
+    font-size: var(--font-size);
+    font-family: var(--font-text);
+    background-color: transparent;
+    text-align: left;
+}
+
+.menu_tabela {
+    width: 100%;
+    border-collapse: collapse; 
+    border: 0.0625rem solid var(--preto); 
+    margin-top: 1.25rem;
+    overflow: hidden;
+  }
+  
+  .menu_tabela td {
+    border: 0.0625rem solid var(--preto); 
+    padding: 0.5rem; 
+  }
+  
+ .lista_topico {
+    text-align: center;
+ }
+
+
+  
+
+/*  CABEÇALHO */
+
+.header {
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+.header-button {
+    background-color: transparent;
+}
+
+ 
+/* CAPÍTULOS */
+
+.chapter_title {
+    font-family: var(--font-titulos);
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--preto);
+    margin-top: 5rem;
+}
+
+.chapter_subtitle {
+    font-size: 0.75rem;
+}
+
+.chapter_img_abertura {
+    margin: 1rem 0 1rem;
+}
+
+.chapter_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.chapter_text {
+    color: var(--preto);
+    text-align: justify;
+    text-indent: 1rem;
+    font-family: var(--font-text);
+    font-size: var(--font-size);
+    line-height: 1.5625rem;
+    width: 100%;
+}
+
+    .chapter_ret {
+        width: 100%;
+        text-align: center;
+    }
+
+     .text_italic {
+        font-style: italic;
+     }
+
+
+  /* MENU */
+
+  
+  .navigation {
+    position: fixed;
+    width: 100%;
+    bottom: 1.25rem;
+    left: 50%; /* Centraliza a navegação */
+    transform: translateX(-50%); /* Continua centralizado */
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    align-items: center;
+    transition: transform 0.3s ease; /* Transição suave */
+  }
+  
+  .navigation button {
+
+    background-color: var(--preto);
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 100%;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease; 
+  }
+  
+  .navigation button img {
+    width: 0.875rem;
+  }
+  
+  .additional-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateX(-20px); 
+    pointer-events: none;
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  .additional-buttons.visible {
+    opacity: 1;
+    transform: translateX(0); 
+    pointer-events: auto;
+    visibility: visible;
+    position: static;
+  }
+  
+  .navigation.show-extra-buttons {
+    transform: translateX(-50%) translateX(-1px);
+  }
+  
