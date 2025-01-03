@@ -182,20 +182,23 @@ body {
 
 /* CAPÍTULOS */
 
+.chapter_head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin: 7rem 1rem 2rem;
+}
+
 .chapter_title {
     font-family: var(--font-titulos);
     font-weight: bold;
     font-size: 1.2rem;
     color: var(--preto);
-    margin-top: 7rem;
 }
 
 .chapter_subtitle {
     font-size: 0.75rem;
-}
-
-.chapter_img_abertura {
-    margin: 1rem 0 1rem;
 }
 
 .chapter_content {
